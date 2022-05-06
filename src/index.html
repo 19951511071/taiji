@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style id="style"></style>
+    <div id="html"></div>
+    <div id="divWrapper">
+      <div id="div1"></div>
+    </div>
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      *::after {
+        box-sizing: border-box;
+      }
+      *::before {
+        box-sizing: border-box;
+      }
+      #demo {
+        word-break: break-all;
+      }
+      #div1 {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+      #div1::before {
+        content: "";
+        position: absolute;
+        display: block;
+      }
+      #div1::after {
+        content: "";
+        position: absolute;
+        display: block;
+      }
+      @media (max-width: 500px) {
+        #html {
+          height: 50vh;
+          overflow: auto;
+        }
+        #divWrapper {
+          height: 50vh;
+        }
+        #div1 {
+          width: 35vh;
+          height: 35vh;
+          position: relative;
+          left: 50%;
+          top: 5vh;
+          transform: translateX(-50%);
+        }
+        #div1::before {
+          width: 17.5vh;
+          height: 17.5vh;
+        }
+        #div1::after {
+          width: 17.5vh;
+          height: 17.5vh;
+        }
+      }
+    </style>
+    <script src="main.js"></script>
+  </body>
+</html>
